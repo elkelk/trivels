@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1= title
+  form( method="post")
+    div
+      div
+        span Question :
+        input(type="text", name="question", id="editTriviaQuestion")
+      div
+        span Answer :
+        textarea(name="answer", id="editTriviaAnswer")
+      div#editArticleSubmit
+        input(type="submit", value="Send")

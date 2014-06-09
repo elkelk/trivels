@@ -1,0 +1,53 @@
+body {
+  font-family: "Helvetica Neue", "Lucida Grande", "Arial";
+  font-size: 13px;
+  text-align: center;
+  text-stroke: 1px rgba(255,255,255,0.1);
+  color: #555;
+}
+h1,
+h2 {
+  margin: 0;
+  font-size: 22px;
+  color: #343434;
+}
+h1 {
+  text-shadow: 1px 2px 2px #ddd;
+  font-size: 60px;
+}
+#trivia {
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  width: 320px;
+}
+#trivia .trivia {
+  margin: 20px;
+}
+#trivia .trivia .created_at {
+  display: none;
+}
+#trivia .trivia .title {
+  font-weight: bold;
+  text-decoration: underline;
+  background-color: #eee;
+}
+#trivia .trivia .body {
+  background-color: #ffa;
+}
+.trivia .created_at {
+  display: none;
+}
+.trivia input[type =text] {
+  width: 490px;
+  margin-left: 16px;
+}
+.trivia input[type =button],
+.trivia input[type =submit] {
+  text-align: left;
+  margin-left: 440px;
+}
+.trivia textarea {
+  width: 490px;
+  height: 90px;
+}

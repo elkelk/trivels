@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h1= title
+  #trivia
+    - each item in trivia_items
+      div.item
+        div.created_at= item.created_at
+        div.question
+          a(href="/question/"+item._id.toHexString())!= item.question
+        div.body= item.answer

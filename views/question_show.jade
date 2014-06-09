@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  h1= title
+  div.trivia
+      div.created_at= trivia.created_at
+      div.title= trivia.question
+      div.body= trivia.answer
+      - each comment in trivia.comments
+        div.comment
+          div.person= comment.person
+          div.comment= comment.comment
+      div
+        form( method="post", action="/question/" + trivia._id.toHexString() + "/comment")
+          input( type="hidden", name="_id", value=trivia._id.toHexString())
+          div
+            span Author :
+            input( type="text", name="person", id="addCommentPerson")
+          div
+            span Comment :
+            textarea( name="comment", rows=5, id="addCommentComment")
+          div#editTriviaSubmit
+            input(type="submit", value="Send")
