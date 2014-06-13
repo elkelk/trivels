@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var TriviaModel = require('../trivia_model').TriviaModel;
+var TriviaModel = require('../app/models/trivia').Trivia;
 
 router.get('/new', function(req, res) {
   res.render('question_new.jade', { title: 'New Question' });

@@ -1,6 +1,5 @@
-var database = require('./database').Database;
-var mongoose = new database();
-TriviaModel = function() {
+var mongoose = require('mongoose');
+Trivia = function() {
   this.schema = mongoose.Schema({
     question: String,
     answer: String,
@@ -9,4 +8,4 @@ TriviaModel = function() {
   });
   return mongoose.model('Trivia', this.schema);
 };
-exports.TriviaModel = TriviaModel();
+exports.Trivia = Trivia();
