@@ -1,12 +1,11 @@
-var express = require('express');
-var router = express.Router();
-var TriviaModel = require('../app/models/trivia').Trivia;
+var TriviaModel = require('../models/trivia').Trivia;
+module.exports = {};
 
-router.get('/new', function(req, res) {
+module.exports.new = function (req, res) {
   res.render('question_new.jade', { title: 'New Question' });
-});
+}
 
-router.post('/new', function(req, res) {
+module.exports.create = function (req, res) {
   var trivia = new TriviaModel({
     question: req.param('question'),
     answer: req.param('answer')
@@ -14,18 +13,18 @@ router.post('/new', function(req, res) {
   trivia.save(function(error, trivia) {
     res.redirect('/')
   });
-});
+}
 
-router.get('/:id', function(req, res) {
+module.exports.show = function (req, res) {
   TriviaModel.findOne({ _id: req.params.id }, function(error, trivia) {
     res.render('question_show.jade', {
       title: "View Question",
       trivia: trivia
     });
   });
-});
+}
 
-router.post('/:id/comment', function(req, res) {
+module.exports.createComment = function (req, res) {
   var comment = {
     person: req.param('person'),
   comment: req.param('comment'),
@@ -38,5 +37,4 @@ router.post('/:id/comment', function(req, res) {
       if( error ) callback(error);
       else res.redirect('/question/' + req.params.id)
     });
-});
-module.exports = router;
+}
